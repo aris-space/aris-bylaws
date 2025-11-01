@@ -1,0 +1,20 @@
+name: compile-pdf
+on: push
+jobs:
+  compile-pdf:
+    name: Compile PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: bylaws.tex
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: bylaws
+          path: bylaws.pdf
