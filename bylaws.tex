@@ -1,0 +1,591 @@
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=1in, bottom=1in, left=0.7in, right=0.7in]{geometry}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{paracol}
+\usepackage[main=nswissgerman, english]{babel}
+\usepackage[useregional]{datetime2}
+\usepackage{ifthen}
+\usepackage{csquotes}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\DTMusemodule{nswissgerman}{de-DE}
+\DTMusemodule{english}{en-US}
+
+\setlength{\parindent}{0pt}
+
+\newcommand*\articleheader{Artikel}
+\providecaptionname{nswissgerman}\articleheader{Artikel}
+\providecaptionname{english}\articleheader{Article}
+
+\newcounter{myparagraph}
+\newcommand\paragraphnumber{\refstepcounter{myparagraph}(\themyparagraph)\space}
+
+\newcounter{article}
+\newenvironment{barticle}[1]{%
+ \setcounter{myparagraph}{0}\refstepcounter{article}\textbf{\articleheader\space\thearticle\space---\space#1}\everypar={\paragraphnumber}\par%
+}{\\}
+
+
+\newboolean{isenglish}
+\setboolean{isenglish}{false}
+\newcommand{\switchlanguage}{%
+	\ifthenelse{\boolean{isenglish}}{%
+		\end{otherlanguage}
+		\setboolean{isenglish}{false}
+		\switchcolumn*
+	}{%
+		\begin{otherlanguage}{english}
+		\setboolean{isenglish}{true}
+		\switchcolumn
+	}%
+}
+
+% Hack command to restore paragraph numbering because many LaTeX commands/environments reset the \everypar TeX primitive
+\newcommand\restoreparnumbering{\par\everypar={\paragraphnumber}\par}
+
+\DTMsavedate{previous_bylaws}{2024-10-05}
+\DTMsavedate{current_bylaws}{2025-02-23}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{ARIS Statuten vom \DTMusedate{current_bylaws}}
+\fancyhead[R]{\selectlanguage{english}ARIS Bylaws of \DTMusedate{current_bylaws}}
+\fancyfoot{}
+\fancyfoot[L]{Seite \thepage\ von \pageref{LastPage}}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+\begin{paracol}{2}
+
+	\begin{center}
+		\Large{\textbf{Statuten des Vereins ARIS}}
+	\end{center}
+
+	\switchlanguage
+
+	\begin{center}
+		\Large{\textbf{Bylaws of the ARIS association}}
+	\end{center}
+
+	\switchlanguage
+
+	\begin{barticle}{Name}
+		Unter dem Namen \enquote{Akademische Raumfahrt Initiative Schweiz} (ARIS) besteht ein Verein im Sinne von Art. 60ff. ZGB. Der Verein besteht auf unbeschränkte Dauer.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Name}
+		There exists an association according to Art. 60ff. CC under the name \enquote{Akademische Raumfahrt Initiative Schweiz} (ARIS). The association is of unlimited duration.
+	\end{barticle}
+	
+	\switchlanguage
+
+	\begin{barticle}{Sitz und Geschäftsjahr}
+		Der Verein hat seinen Sitz in Dübendorf.\\
+
+		Das Geschäftsjahr beginnt jeweils am 1. Oktober und endet am 30. September. Das Vereinsjahr entspricht dem Geschäftsjahr.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Seat and Business Year}
+		The seat of the association is Dübendorf.\\
+
+		The business year starts with October 1st and ends with September 30th. The association year equals the business year.
+	\end{barticle}
+	
+	\switchlanguage
+
+	\begin{barticle}{Zweck}
+		Der Verein \enquote{Aka\-de\-mi\-sche Raum\-fahrt Ini\-tia\-ti\-ve Sch\-weiz} (ARIS) versteht sich in erster Linie als Plattform um insbesondere Studierenden verschiedener Schweizer Bildungsinstitutionen (ETH, Fachhochschulen, Universitäten) und Studienrichtungen die Möglichkeit zu bieten, ihr erlerntes theoretisches Wissen im Rahmen von praxisbezogenen Projekten im Themengebiet Raketentechnik und Raumfahrt anzuwenden.\\
+
+		Der Verein bezweckt die ideelle und materielle Unterstützung von Projekten aus dem Themengebiet Raketentechnik und Raumfahrt. Dabei sollen im Sinne eines wissenschaftlichen Beitrags in diesen Themengebieten neuartige Möglichkeiten erforscht und unerschlossene Potentiale ausgelotet werden. Zu jeder Zeit können mehrere, thematisch unabhängige Projekte im Gang sein.\\
+
+		Der Verein bezweckt, dass die Entwicklungen der Öffentlichkeit zugänglich gemacht werden können. Dies soll insbesondere durch Ausstellungen, Auftritte und Wettbewerbstteilnahmen erfolgen. Weiter werden die Entwicklungsschritte und Erkenntnisse im Rahmen von wissenschaftlichen Publikationen verarbeitet und dokumentiert.\\
+
+		Der Kreis der Involvierten ist weit und allgemein gezogen und umfasst alle Studienrichtungen. Auf diese Weise wird ein interdisziplinärer Gedanken- und Wissensaustausch gefördert.\\
+
+		Der Verein handelt nicht gewinnorientiert und verfolgt keine kommerziellen Zwecke.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Purpose}
+		The association \enquote{Akademische Raumfahrt Initiative Schweiz} (ARIS) primarily understands itself as a platform to enable students of various Swiss institutes of education (Federal Institutes of Technology, Universities of Applied Science, Universities) and courses of study to apply their theoretical knowledge in practical projects in the fields of rocketry and space exploration.\\
+
+		The association's purpose is the non-material and material support of projects in the areas of rocketry and space exploration. The association aims to explore new ideas and potentials in these fields, making scientific contributions. At any time, the association may support several, thematically independent projects.\\
+
+		The association aims to make its developments available to the public. This shall be accomplished, in particular, through exhibitions, performances and participation in competitions. Furthermore, development milestones and results will be processed and documented in the form of scientific publications.\\
+
+		The association involves people of various fields and interests and includes all directions of study. In this way the association contributes to an interdisciplinary exchange of ideas and knowledge.\\
+
+		The association does not aim to make profit and does not serve any commercial purpose.
+	\end{barticle}
+	
+	\newpage
+
+	\switchlanguage
+
+	\begin{barticle}{Mitgliedschaft}
+		Die Mitgliedschaft steht allen natürlichen und juristischen Personen offen, die ein Interesse an der Erreichung des in Art. 3 genannten Vereinszwecks haben und diesen unterstützen.\\
+
+		Aktivmitglieder sind insbesondere diejenigen Mitglieder, die sich mit Rat und Tat für eines oder mehrere Projekte des Vereins einsetzen.\\
+
+		Passivmitglieder sind insbesondere ehemalige Aktivmitglieder und natürliche sowie juristische Personen, welche den Verein nur ideell und finanziell unterstützen.\\
+
+		Der Vorstand entscheidet über den Status (aktiv/passiv) der Mitglieder.\\
+
+		Sind im Rahmen dieser Statuten sowohl die Aktiv- als auch die Passivmitglieder gemeint, wird die Bezeichnung \enquote{Mitglieder} verwendet.\\
+
+		Die Aufnahme von Neumitgliedern kann jederzeit erfolgen. Die Anmeldung zur Mitgliedschaft erfolgt durch Beitrittsgesuch an den Vorstand. Der Vorstand entscheidet ohne Begründung über die Aufnahme neuer Mitglieder.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Membership}
+		Membership in the association is open to all natural and legal persons interested in achieving the association purpose described in Art. 3, and which support this purpose.\\
+
+		Active members are, in particular, those members which participate through action and advice in one or more projects of the association.\\
+
+		Passive members are, in particular, former active members and those natural and legal persons which only support the association through advice or financing.\\
+
+		The Board decides whether a member is classified as active or passive.\\
+
+		If, within the context of these bylaws, both active and passive members are addressed, the term \enquote{members} is used.\\
+
+		New members may be admitted at any time. Signing up for membership is carried out by directing a request for membership to the Board. The Board decides on the admission of new members without explanantion.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Beendigung der Mitgliedschaft}
+		Die Mitgliedschaft erlischt durch
+		\begin{enumerate}
+			\item Austritt (Abs. 2);
+			\item Ausschluss (Abs. 3-5);
+			\item Tod bei natürlichen Personen und Verlust der Rechtsfähigkeit bei juristischen Personen.
+		\end{enumerate}
+		\restoreparnumbering
+		
+		Der Austritt ist in Form einer Erklärung zuhanden des Vorstands zu jeder Zeit möglich. Der Mitgliederbeitrag für das laufende Jahr bleibt geschuldet. \\
+
+		Mitglieder können nach vorgängiger Anhörung durch den Vorstand von diesem ohne Angabe von Gründen durch Beschluss mit absoluter Zweidrittelmehrheit aus dem Verein ausgeschlossen werden. Der Ausschluss wird schriftlich mitgeteilt und gilt ab sofort. Das ausgeschlossene Mitglied kann innert 14 Tagen die Einberufung einer ausserordentlichen Generalversammlung verlangen, welche abschliessend über den Ausschluss entscheidet.\\
+
+		Werden Mitgliederbeiträge wiederholt (während zwei Jahren) nicht bezahlt, führt dies zum Ausschluss aus dem Verein.\\
+
+		Der Vorstand kann im Falle von Inaktivität oder Unerreichbarkeit von Mitgliedern, diese mit einfachem Vorstandsbeschluss aus dem Verein ausschliessen. Der Ausschluss wird den betroffenen Mitgliedern mitgeteilt; der elektronische Weg ist gültig. Auf diesem Wege ausgeschlossene Mitglieder haben jederzeit Anspruch auf Wiederaufnahme in den Verein.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{End of Membership}
+		Membership ends through
+		\begin{enumerate}
+			\item Relinquishing membership (Par. 2);
+			\item Exclusion (Par. 3-5);
+			\item Death in the case of natural persons and loss of legal capacity in the case of legal persons.
+		\end{enumerate}
+		\restoreparnumbering
+
+		Members may reqlinquish their membership at any time by directing an appropriate declaration to the Board. Membership fees for the current year remain owed.\\
+
+		Members may be excluded from the association by an absolute two-thirds majority of Board members after a Board hearing. The expulsion is communicated in writing and is effective immediately. The excluded member may, within 14 days, call for an extraordinary general assembly to make a final determination on the matter of exclusion.\\
+		\newpage
+		If membership fees are not paid repeatedly (within two years), the member is excluded from the association.\\
+		
+		The Board may, in the case of inactivity of a member or inability to reach a member, exclude members by simple Board vote. This exclusion is communicated to the affected members; electronic communication is allowed. Members excluded in this way have a right to be readmitted into the association at any time.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Organe}
+		Die Organe des Vereins sind zumindest:
+		\begin{enumerate}
+			\item Die Generalversammlung;
+			\item Der Vorstand, mindestens bestehend aus:
+			\begin{enumerate}
+				\item einem Präsidium;
+				\item einem Vizepräsidium;
+				\item einem Aktuariat.
+			\end{enumerate}
+		\end{enumerate}
+		\restoreparnumbering
+	
+		Die Generalversammlung bestimmt ggf. weitere Vorstandspositionen; sowohl die Erstellung als auch die Auflösung weiterer Vorstandspositionen bedarf eines einfachen Beschlusses. \\
+
+		Der Vorstand und die Generalversammlung können durch einfachen Beschluss zusätzliche Organe bilden und diese auch wieder auflösen. Durch die Generalversammlung gebildete Organe können nur durch die Generalversammlung aufgelöst werden.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Bodies}
+		The Bodies of the association are at least:
+		\begin{enumerate}
+			\item The General Assembly;
+			\item The Board of Directors (\enquote{Board}), consisting at least of:
+			\begin{enumerate}
+				\item A President;
+				\item A Vice President;
+				\item A Secretary (Head of Legal and Administration).
+			\end{enumerate}
+		\end{enumerate}
+		\restoreparnumbering
+
+		The General Assembly determines further Board positions; the creation and disolution of further positions requires a simple vote.\\
+
+		The Board and General Assembly may create or dissolve additional bodies by simple vote. Bodies created by the General Assembly may only be dissolved by the General Assembly.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Die Generalversammlung}
+		Die Generalversammlung ist das oberste Organ des Vereins. Sie setzt sich aus allen Mitgliedern zusammen. \\
+
+		Die Generalversammlung hat folgende unentziehbare Kompetenzen:
+		\begin{enumerate}
+			\item Genehmigung des Protokolls der letzten Generalversammlung;
+			\item Abnahme des Jahresberichts des Vorstands;
+			\item Abnahme der Jahresrechnung;
+			\item Entscheid über die Entlastung des Vorstands;
+			\item Entscheid über die Erhebung, Höhe und Verwendung von Passiv- und Aktivmitgliederbeiträgen;
+			\item Festlegung der Ausrichtung der Arbeit und Leitung der Vereinsaktivitäten;
+			\item Wahl des Vorstands;
+			\item Abschliessender Entscheid über Ausschlüsse von Mitgliedern;
+			\item Beschluss über:
+			\begin{enumerate}
+				\item Anträge des Vorstands und der Mitglieder;
+				\item Verabschiedung und Änderung der Statuten;
+				\item Auflösung des Vereins.
+			\end{enumerate}
+		\end{enumerate}
+		\restoreparnumbering
+
+		Die Generalversammlung kann sich zu jedem Thema, das sie nicht einem anderen Organ anvertraut hat, äussern oder dazu aufgefordert werden. \\
+
+		Jede ordnungsgemäss einberufene Generalversammlung ist beschlussfähig. Sie wird von einem Vorstandsmitglied geleitet. Über die Verhandlungen ist ein Beschlussprotokoll zu führen. \\
+
+		An der Generalversammlung verfügt jedes Mitglied über eine Stimme. Eine Stimmabgabe durch Stellvertretung ist nicht möglich. \\
+
+		Beschlüsse werden in offener Abstimmung mit der einfachen Mehrheit (d.h. ohne Berücksichtigungen von Enthaltungen/ungültigen Stimmen) der abgegebenen Stimmen gefasst. Die Abstimmung erfolgt geheim, wenn ein anwesendes Mitglied dies beantragt und die Generalversammlung diesem Antrag mit einfacher Mehrheit zustimmt. Bei Stimmengleichheit entscheidet das Präsidium.\\
+
+		Bei Beschlüssen, bei denen mehrere Wahloptionen vorliegen (z.B. mehrere Vorstandskandidaturen oder Anträge mit Gegenvorschlägen) wird über jeden Beschlussvorschlag einzeln abgestimmt. Erreichen mehrere Vorschläge die erforderliche Mehrheit, so wird der Beschluss, der die grösste Mehrheit (grösstes Verhältnis von Ja-Stimmen zu Nein-Stimmen) erzielt hat, als angenommen betrachtet.\\
+
+		Beschlüsse betreffend die Änderung der Statuten und die Auflösung des Vereins bedürfen der absoluten Zwei\-drit\-tel\-mehr\-heit (d.h. Ent\-hal\-tung\-en/\-un\-gül\-ti\-ge Stimmen zählen als Nein) der abgegebenen Stimmen.\\
+
+		Bei der Beschlussfassung über die eigene Dé\-char\-ge-\-Er\-teil\-ung und über ein Rechtsgeschäft oder einen Rechtsstreit zwischen einem Mitglied und dem Verein ist das betroffene Mitglied vom Stimmrecht ausgeschlossen.\\
+
+		Der Vorstand legt die Modalitäten der Stimmabgabe (Handerheben, elektronische Abstimmung etc.) fest.\\
+
+		Anträge zuhanden der Generalversammlung sind bis spätestens eine Woche vor der Generalversammlung schriftlich an den Vorstand zu richten und durch den Vorstand an den Verein zu kommunizieren. Änderungen der eingereichten Anträge oder Gegenvorschläge sind bis spätestens drei Tage vor der Generalversammlung an den Vorstand zu richten. Der Vorstand kommuniziert die finalen Beschlussfassungen aller Anträge und Gegenvorschläge zwei Tage vor der Generalversammlung.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{The General Assembly}
+		The General Assembly is the supreme body of the assiciation. It consists of all members.\\
+
+		The General Assembly holds the following indefeasible authorities:
+		\begin{enumerate}
+			\item Approval of the protocol of the previous general assembly;
+			\item Approval of the annual report of the Board;
+			\item Approval of the financial report;
+			\item Determination on the discharge of the Board;
+			\item Determination on the raising, amount and use of passive and active membership fees;
+			\item Determination of the direction of association activities;
+			\item Election of the Board;
+			\item Final determination on the exclusion of members;
+			\item Decision on:
+			\begin{enumerate}
+				\item Motions of the Board and members;
+				\item Approval and change of bylaws;
+				\item Dissolution of the Association.
+			\end{enumerate}
+		\end{enumerate}
+		\restoreparnumbering
+
+		The General Assembly may voice its opinion, and may be asked to voice its opinion, on any topic which it has not delegated to another body of the association.\\
+
+		Every properly convened general assembly constitutes a quorum. The general assembly is led by a member of the Board. A protocol is made on the discussions of the general assembly.\\
+
+		At the general assembly, each member has one vote. Voting by proxy is not possible.\\
+
+		Decisions of the General Assembly are formed in open voting with a simple majority (i.e. excluding abstentions/invalid votes) of cast votes. The vote is held in secret if a present member requests this and the General Assembly agrees with a simple majority. The President's vote breaks ties.\\
+
+		In the case of decisions, which are made between multiple options (e.g. multiple candidates for a Board position or motions with countermotions), each option is voted on separately. If multiple options reach the required majority, the option with the largest majority (of \enquote{yes} votes to \enquote{no} votes) is accepted.\\
+
+		Decisions that change the bylaws or cause the dissolution of the association require an absolute two-thirds majority (i.e. abstentions/invalid votes count against the motion) of cast votes.\\
+
+		In decisions about their own discharge or about a legal proceeding or legal dispute between a member and the association, the affected member is excluded from voting.\\
+
+		The Board determines the method of voting (raising of hands, electronic voting etc.).\\
+
+		Motions to the General Assembly must be directed to the Board, in writing, at the latest one week before the general assembly and are to be communicated to the association by the Board. Changes in submitted motions or countermotions must be communicated to the Board at the latest three days before the general assembly. The Board communcates the final drafts of all motions and countermotions two days before the general assembly.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Einberufung der ordentlichen Generalversammlung}
+		Eine ordentliche Generalversammlung findet jährlich, innerhalb der ersten sechs Wochen nach Beginn des Vereinsjahres statt.\\
+
+		Zur ordentlichen Generalversammlung werden die Mitglieder mindestens zehn Tage im Voraus schriftlich unter Beilage der Traktandenliste vom Vorstand eingeladen. Einladungen auf elektronischem Wege sind gültig.\\
+
+		Die Tagesordnung der ordentlichen Generalversammlung umfasst:
+		\begin{enumerate}
+			\item den Bericht des Vorstands über die Vereinsaktivitäten im vergangenen Jahr, inkl. Bericht über die Entwicklung der Mitgliederzahlen und Jahresrechnung;
+			\item die Wahl der Vorstandsmitglieder;
+			\item Beschluss über Anträge des Vorstands und der Mitglieder.
+		\end{enumerate}
+		\restoreparnumbering
+			
+		Mit der Einladung zur ordentlichen Generalversammlung werden die Vorstandspositionen genannt. Mitglieder, die für den Vorstands kandidieren melden ihre Kandidatur mittels ihres Namens und der Vorstandsfunktion, für die sie kandidieren, bis spätestens eine Woche vor der Generalversammlung schriftlich an den Vorstand. Eine Kandidatur für mehrere Positionen ist ausgeschlossen. Der elektronische Weg ist gültig. Der Vorstand kommuniziert die Kandidierenden sechs Tage vor der Generalversammlung. 
+	\end{barticle}
+
+	\newpage
+	\switchlanguage
+
+	\begin{barticle}{Convening of the Ordinary General Assembly}
+		An ordinary general assembly is held every year within the first six weeks of the association year.\\
+
+		Members are invited to the ordinary general assembly by the Board, in writing, at least ten days before the date of the assembly, under attachment of the agenda. Electronic invitations are valid.\\
+
+		The agenda of the ordinary general assembly includes:
+		\begin{enumerate}
+			\item The Board's report on association activites in the previous year, including a report on the development of membership numbers and association finances;
+			\item Election of Board members;
+			\item Decision on motions of the Board and members.
+		\end{enumerate}
+		\restoreparnumbering
+
+		The invitation to the ordinary general assembly further includes a list of current Board positions. Members intending to run for Board memebrship must indicate their candidacy in writing, specifying their name and the position for which they run, to the Board at least one week before the general assembly. Running for multiple positions is not allowed. Electronic communication is valid. The Board announces all candidates to the association six days before the general assembly.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Einberufung der ausserordentlichen Generalversammlung}
+		Der Vorstand, ein Fünftel der Aktivmitglieder oder Fünftel der Mitglieder können jederzeit die Einberufung einer ausserordentlichen Generalversammlung unter Angabe des Zwecks verlangen.\\
+
+		Die ausserordentliche Generalversammlung hat frühestens eine Woche aber spätestens zwei Wochen nach Eingang des Begehrens zu erfolgen.\\
+
+		Die Mitglieder werden unverzüglich unter Beilage der Traktandenliste vom Vorstand eingeladen. Einladungen auf elektronischem Wege sind gültig.\\
+
+		Sind sämtliche stimmberechtigten Mitglieder anwesent, kann die ausserordentliche Generalversammlung ohne vorgängige Einladung als Universalversammlung abgehalten werden.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Convening of the Extraordinary General Assembly}
+		The Board, a fifth of active members or a fifth of all members may request the convening of an extraordinary general assembly at any time, specifying the purpose.\\
+
+		The extraordinary general assembly must be scheduled at least one week and at most two weeks after the request is received by the Board.\\
+
+		The association members are invited by the Board immediately under attachment of the agenda. Electronic invitations are valid.\\
+
+		If all voting members are present, the extraordinary general assembly may be convened without prior invitation as a universal general assembly.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Vorstand}
+		Der Vorstand besteht gemäss Art. 6 aus mindestens drei Mitgliedern, die bis zum Ende der folgenden ordentlichen Generalversammlung gewählt werden. Die Wiederwahl ist möglich. Vorstandsmitglieder informieren den Verein über sämtliche weiteren Positionen, die sie im Verein besetzen. Des Weiteren informieren Vorstandsmitglieder den Verein, wenn sie während ihrer Vorstandstätigkeit neue Positionen aufnehmen.\\
+
+		Das Präsidium kann nur durch ein Mitglied besetzt werden, das bereits mindestens ein Jahr aktiv im Verein tätig gewesen ist.\\
+		
+		Dem Vorstand stehen grundsätzlich alle Befugnisse zu, welche nicht von Gesetzes wegen oder gemäss diesen Statuten der Generalversammlung vorbehalten sind. Es sind dies insbesondere:
+		\begin{enumerate}
+			\item Ergreifen der nötigen Massnahmen zur Erreichung der Vereinszwecke;
+			\item Genehmigung der Durchführung und Umsetzung von Projekten;
+			\item Führen der laufenden Geschäfte und Leitung des Vereins;
+			\item Festlegung des Jahresbudgets unter Konsultation der Projektleitungen;
+			\item Erstellung des Jahresberichts zuhanden der Generalversammlung;
+			\item Aufnahme und Ausschluss von Mitgliedern;
+			\item Führung einer Datenbank über die aktuellen Daten und den Aktiv-/Passivmitgliedsstatus aller Mitglieder;
+			\item Vorbereitung und Durchführung der Generalversammlungen;
+			\item Ausarbeiten von Reglementen und Einsetzen von Arbeitsgruppen;
+			\item Kontrolle der Einhaltung der Statuten.
+		\end{enumerate}
+		\restoreparnumbering
+
+		Der Vorstand kann seine Kompetenzen nach eigenem Ermessen einzelnen Vereinsmitgliedern oder Organen übertragen.\\
+		
+		Der Vorstand vertritt den Verein nach aussen. Der Verein wird durch die Kollektivunterschrift von je zwei Vorstandsmitgliedern verpflichtet.\\
+		
+		Der Vorstand ist für die Buchführung des Vereins zuständig. Ist kein*e explizite Kassier*in durch den Vorstand oder die Generalversammlung bestimmt, obliegt die Buchführung und Erstellung der Jahresrechnung dem Aktuariat.\\
+		
+		Der Vorstand trifft sich nach Absprache. Er ist beschlussfähig, wenn alle Mitglieder anwesend sind. Die Beschlüsse werden mit einfacher Mehrheit gefasst. Bei Stimmengleichheit entscheidet das Präsidium.\\
+		
+		Der Vorstand kann auch Zirkularbeschlüsse (unter Einbeziehung aller Vorstandsmitglieder) fassen, sofern nicht ein Vorstandsmitglied eine mündliche Beratung verlangt. Zirkularbeschlüsse dürfen auf elektronischem Wege gefasst werden.\\
+		
+		Der Vorstand führt über seine Beschlüsse Protokoll.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Board of Directors}
+		The Board consists, according to Art. 6, of at least three members of the association, which are elected until the end of the next ordinary general assembly. Reelection is possible. Board members must inform the association of any other functions they may serve in the association. Furthermore, Board members must inform the association if they take up any further functions during their tenure as Board members.\\
+
+		Only a member which has been active in the association for at least one year may be elected to the presidency.\\
+
+		The Board generally is entitled to all powers which are not limited to the General Assembly by law or by these bylaws. These powers include, in particular:
+		\begin{enumerate}
+			\item Taking all necessary measures to achieve the association's purpose;
+			\item Approving formation and implementation of pro\-jects;
+			\item Running the association's business and leading the association;
+			\item Determining the yearly budget under consultation of project leadership;
+			\item Creating the Annual Report for the General Assembly;
+			\item Admitting and excluding members;
+			\item Maintaining a database of the current information and membership status of all members;
+			\item Preparing and running general assemblies;
+			\item Preparing rules and regulations and forming work groups;
+			\item Enforcing the bylaws.
+		\end{enumerate}
+		\restoreparnumbering
+
+		The Board may delegate its powers to individual members of the association or other bodies as it deems necessary.\\
+
+		The Board represents the association to third parties. The association is bound by the collective signature of two Board members.\\
+
+		The Board is responsible for bookkeeping of the association. If no Treasurer is explicity determined by the Board or General Assembly, bookkepping and creation of the annual financial report is the duty of the Secretary.\\
+
+		The Board meets per agreement of its members. A quorum is established if all members are present. Decisions are made by simple majority. The President's vote breaks ties.\\
+
+		The Board may form circular resolutions under consultation of all Board members, as long as no Board member requests a verbal discussion. Circular resolutions may be formed electronically.\\
+
+		The Board maintains a protocol of its decisions.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Einnahmen, Vermögen und Entschädigungen}
+		Zur Verfolgung des Vereinszwecks verfügt der Verein insbesondere über folgende finanzielle Mittel:
+		\begin{enumerate}
+			\item Sponsoren- und Spendenbeiträge;
+			\item Zuwendungen aller Art;
+			\item Beiträge von Bildungsinstitutionen;
+			\item Erträge aus dem Vermögen;
+			\item Mitgliederbeiträge, insofern solche von der Generalversammlung festgelegt wurden;
+			\item Erträge aus eigenen Veranstaltungen.
+		\end{enumerate}
+		\restoreparnumbering
+	
+		Die Mittel des Vereins werden ausschliesslich zur Förderung des Vereinszwecks verwendet.\\
+		
+		Der Vorstand und die Mitglieder des Vereins sind ehrenamtlich tätig. Der Vorstand und die Mitglieder des Vereins haben nur Anspruch auf Entschädigung der effektiven Spesen und Barauslagen gegen Vorlage der entsprechenden Belege.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Income, Assets and Reimbursements}
+		To acheive the association's purpose, the association may use, in particular, the following financial resources:
+		\begin{enumerate}
+			\item Sponsoring fees and donations;
+			\item Contributions of any kind;
+			\item Contributions of educational institutions;
+			\item Proceeds from assets;
+			\item Membership fees, as long as they are determined by the General Assembly;
+			\item Proceeds from events held by the association.
+		\end{enumerate}
+		\restoreparnumbering
+
+		The funds of the association may only be used to further the association's purpose.\\
+
+		The Board and members of the association are unsalaried volunteers. The Board and members of the association are only entitled to be reimbursed for their expenses if they submit receipts.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Haftung und Versicherung}
+		Für Verbindlichkeiten des Vereins haftet ausschliesslich das Vereinsvermögen. Eine persönliche Haftung der Mitglieder ist ausgeschlossen.\\
+
+		Allfällige Versicherungen sind Sache der Mitglieder. Dies gilt für alle Versicherungen. Eine Haftpflichtversicherung wird den Mitgliedern beim Eintritt ausdrücklich empfohlen.\\
+
+		Sind Organmitglieder oder deren Vertreter unentgeltlich tätig, haften sie dem Verein für einen bei der Wahrnehmung ihrer Pflichten verursachten Schaden nur bei Vorliegen von Vorsatz oder grober Fahrlässigkeit. Dies gilt auch für die Haftung gegenüber den Mitgliedern des Vereins. Ist streitig, ob ein Organmitglied oder ein besonderer Vertreter einen Schaden vorsätzlich oder grob fahrlässig verursacht hat trägt der Verein respektive das geschädigte Mitglied die Beweislast.\\
+
+		Sind Organmitglieder oder deren Vertreter unentgeltlich tätig und einem anderen zum Ersatz eines Schadens verpflichtet, so können sie für den CHF 2'000.00 übersteigenden Betrag von dem Verein die Befreiung von der Verbindlichkeit verlangen. Satz 1 gilt nicht, wenn der Schaden vorsätzlich oder grob fahrlässig verursacht wurde.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Liability and Insurance}
+		Only the association's assets are held liable for obligations of the association. Personal liability of members is excluded.\\
+
+		Any insurance is the individual responsibility of the members. A liability insurance is explicitly recommended to all members when being admitted to the association.\\
+
+		If members of the association's bodies or their proxies are unsalaried, they are only liable to the association for damages incurred to the association during their work in the case of willful intent or gross negligence. This also applies to liability to the members of the association. If it is unclear if a member of an association body or their proxy have acted with willful intent or gross negligence, the burden of proof lies on the association/the aggrieved member.\\
+
+		If members of the association's bodies or their proxies are unsalaried, and are required to pay damages to a third party, they may request the association to cover any amount exceeding 2'000.00 CHF. This does not apply in the case of willful intent or gross negligence.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Wahrung des Vereinszwecks}
+		Alle Mitglieder sind verpflichtet, die Interessen des Vereins zu wahren.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Protection of the Purpose of the Association}
+		All members are required to protect the interests of the association.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Auflösung des Vereins}
+		Die Auflösung des Vereins kann durch Beschluss einer ordentlichen oder ausserordentlichen Generalversammlung beschlossen werden.\\
+
+		Bei Auflösung des Vereins ist das Vereinsvermögen einer in der Schweiz ansässigen steuerbefreiten Organisation zu übertragen, die einen ähnlichen Zweck verfolgt. Dabei werden Organisationen, die der ETH Zürich nahestehen, bevorzugt. Eine Verteilung unter die Mitglieder ist ausgeschlossen.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Dissolution of the Association}
+		The dissolution of the association may be decided by an ordinary or extraordinary general assembly.\\
+
+		In the case of dissolution, the association's assets must be transferred to a tax-exempt organization located in Switzerland that serves a similar purpose. Organizations that are close to ETH Zürich are preferred. A distribution among members is prohibited.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Geistiges Eigentum}
+		Verhandlungen über die Lizensierung von geistigem Eigentum des Vereins an Dritte liegen in den Kompetenzen des Vorstands.\\
+		
+		Eine Übertragung von geistigem Eigentum erfordert einen Generalversammlungsbeschluss.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Intellectual Property}
+		Negotiations about licensing intellectual property of the association to third parties are within the powers of the Board.\\
+
+		Transferring intellectual property requires a general assembly vote.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Rechtskräftige Fassung}
+		Die deutsche Fassung dieser Statuten ist rechtskräftig.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Legally Binding Version}
+		The German version of these bylaws is legally binding.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Inkrafttreten}
+		Diese Statuten sind anlässlich der Generalversammlung vom \DTMusedate{current_bylaws} angenommen worden, ersetzen die Statuten vom \DTMusedate{previous_bylaws} und treten mit Ende der Generalversammlung in Kraft.
+	\end{barticle}
+
+	\switchlanguage
+
+	\begin{barticle}{Effective Date}
+		These bylaws have been agreed upon by the general assembly on \DTMusedate{current_bylaws}, replace the bylaws of \DTMusedate{previous_bylaws} and enter into force with the end of the general assembly.
+	\end{barticle}
+
+	\switchlanguage
+\end{paracol}
+\end{document}
