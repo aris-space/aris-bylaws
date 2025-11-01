@@ -13,8 +13,9 @@ jobs:
         with:
           root_file: bylaws.tex
           
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
         with:
-          name: bylaws
-          path: bylaws.pdf
+          files: |
+            bylaws.pdf
