@@ -13,8 +13,8 @@ jobs:
         with:
           root_file: bylaws.tex
           
-      - name: Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v6
         with:
-          files: |
-            bylaws.pdf
+          name: PDF
+          path: bylaws.pdf
